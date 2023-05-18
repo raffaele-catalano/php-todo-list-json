@@ -5,8 +5,13 @@ $json_string = file_get_contents('data.json');
 
 $task_list = json_decode($json_string, true);
 
-if(isset($_POST['toDoTask'])){
-    $task_list[] = $_POST['toDoTask'];
+if(isset($_POST['task'])){
+
+    $newTask = [
+        "task" => $_POST['task'],
+        'done' => false
+    ];
+    $task_list[] = $newTask;
     writeOn($task_list);
 };
 

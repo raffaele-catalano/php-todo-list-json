@@ -18,19 +18,31 @@ createApp( {
             });
         },
         addNewTask() {
-            const data = {
-                toDoTask: {
-                    task: this.newTask, 
-                    done: false
-                }
+            // const data = {
+            //     toDoTask: {
+            //         task: this.newTask, 
+            //         done: false
+            //     }
 
-            }
-            axios.post(this.apiUrl, data, {
-                headers: {'Content-Type': 'multipart/form-data'}
-            }).then(response => {
-                this.taskList = response.data;
-                console.error('ricezione task ------>', this.taskList);
-            })
+            // }
+            // axios.post(this.apiUrl, data, {
+            //     headers: {'Content-Type': 'multipart/form-data'}
+            // }).then(response => {
+            //     this.newTask = '';
+            //     this.taskList = response.data;
+            //     console.error('ricezione task ------>', this.taskList);
+            // })
+
+            const data = new FormData ();
+            data.append('task', this.newTask);
+            data.append('done', false);
+
+            axios.post(this.apiUrl, data)
+            .then(response => {
+                    this.newTask = '';
+                    this.taskList = response.data;
+                    console.error('ricezione task ------>', this.taskList);
+                })
         }
     },
     mounted() {
