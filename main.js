@@ -6,7 +6,7 @@ createApp( {
             apiUrl: 'server.php',
             taskList: [],
             newTask: '',
-            //flag che determina il movimento dell'icona del cestino con valore booleano
+            //TODO: flag che determina il movimento dell'icona del cestino con valore booleano
             shake: false,
         }
     }, 
@@ -18,21 +18,6 @@ createApp( {
             });
         },
         addNewTask() {
-            // const data = {
-            //     toDoTask: {
-            //         task: this.newTask, 
-            //         done: false
-            //     }
-
-            // }
-            // axios.post(this.apiUrl, data, {
-            //     headers: {'Content-Type': 'multipart/form-data'}
-            // }).then(response => {
-            //     this.newTask = '';
-            //     this.taskList = response.data;
-            //     console.error('ricezione task ------>', this.taskList);
-            // })
-
             const data = new FormData ();
             data.append('task', this.newTask);
             data.append('done', false);
@@ -41,7 +26,16 @@ createApp( {
             .then(response => {
                     this.newTask = '';
                     this.taskList = response.data;
-                    console.error('ricezione task ------>', this.taskList);
+                    console.warn('ricezione task ------>', this.taskList);
+                })
+        },
+        removeTask(index) {
+            const data = new FormData ();
+            data.append('taskToDelete', index);
+            axios.post(this.apiUrl, data)
+            .then(response => {
+                this.taskList = response.data;
+                    console.error('indice array task da eliminare --->',this.taskList);
                 })
         }
     },

@@ -15,6 +15,12 @@ if(isset($_POST['task'])){
     writeOn($task_list);
 };
 
+if(isset($_POST['taskToDelete'])) {
+    $index = $_POST['taskToDelete'];
+    array_splice($task_list, $index, 1);
+    writeOn($task_list);
+}
+
 function writeOn($task_list) {
     file_put_contents('data.json', json_encode($task_list));
 };

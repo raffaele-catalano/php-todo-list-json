@@ -49,6 +49,7 @@
                     <span>{{task.task}}</span>
                     <i
                         class="fa-solid fa-trash"
+                        @click.stop="removeTask(index)"
                         @mouseover="shake = true"
                         @mouseleave="shake = false"></i>
                     
