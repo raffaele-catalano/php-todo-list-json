@@ -5,19 +5,35 @@ createApp( {
         return {
             apiUrl: 'server.php',
             taskList: [],
+            newTask: '',
             //flag che determina il movimento dell'icona del cestino con valore booleano
             shake: false,
         }
     }, 
     methods: {
-        getTaskList() {
+        getData() {
             axios.get(this.apiUrl) .then(result => {
                 this.taskList = result.data;
-                console.log('pippo e paperino', this.taskList);
+                console.warn('lettura task------>', this.taskList);
             });
+        },
+        addNewTask() {
+            const data = {
+                toDoTask: {
+                    task: this.newTask, 
+                    done: false
+                }
+
+            }
+            axios.post(this.apiUrl, data, {
+                headers: {'Content-Type': 'multipart/form-data'}
+            }).then(response => {
+                this.taskList = response.data;
+                console.error('ricezione task ------>', this.taskList);
+            })
         }
     },
     mounted() {
-        this.getTaskList();
+        this.getData();
     }
 }).mount('#app')
