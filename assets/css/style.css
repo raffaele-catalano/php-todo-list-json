@@ -45,6 +45,7 @@ body {
     border: 2px solid white;
     cursor: pointer;
     box-shadow: 1px 1px 10px rgba(255, 255, 255, .3);
+    transition: all .4s;
 }
 
 .input-area button:hover {
@@ -104,6 +105,7 @@ body {
     font-size: 1.2rem;
     color: #1c2941;
     font-weight: 500 ;
+    transition: all .4s;
 }
 
 .tasks-list li:hover {
@@ -112,6 +114,7 @@ body {
 
 .tasks-list li i {
     color: #1c2941;
+    transition: all .3s;
 }
 
 .tasks-list li.done span {

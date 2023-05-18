@@ -12,7 +12,7 @@ Solo a questo punto sarà utile passare alla lettura della lista da un file `JSO
 - Mostrare lo stato del *task* → se completato, barrare il testo;
 - Permettere di segnare un *task* come completato facendo *click* sul testo;
 - Permettere il *toggle* del *task* (completato/non completato);
-- Abilitare l’eliminazione di un *task*.
+- Abilitare l’eliminazione di un *task*. &check;
 
 ## Stack
 - `HTML`;
