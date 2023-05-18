@@ -1,0 +1,18 @@
+[
+    {
+        "task": "Fare la spesa",
+        "done": "false"
+    },
+    {
+        "task": "Iscriversi in Palestra",
+        "done": "false"
+    },
+    {
+        "task": "Far partire la lavatrice",
+        "done": "false"
+    },
+    {
+        "task": "Chiamare Giuseppe",
+        "done": "false"
+    }
+]

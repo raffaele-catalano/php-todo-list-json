@@ -1,3 +1,8 @@
+<?php
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,10 +33,8 @@
         </div>
 
         <div class="input-area">
-            <!-- aggiungendo il .trim al v-model si impedisce di contare gli spazi come caratteri
-            il keyup.enter fa in modo che si possa aggiungere il nuovo Task anche premendo enter -->
-            <input v-model.trim="newTask" type="text" placeholder="Aggiungi un nuovo Task">
-            <!-- il click sul bottone permette di aggiungere il nuovo task richiamando la funzione createTask -->
+
+            <input type="text" placeholder="Aggiungi un nuovo Task">
             <button>AGGIUNGI</button>
         </div>
 
