@@ -18,6 +18,8 @@
     <link rel="shortcut icon" href="assets/img/todoist_favicon.png" type="png">
     <!-- font-awesome -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css' integrity='sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw==' crossorigin='anonymous'/>
+    <!-- Axios -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.js' integrity='sha512-RjvSEaeDqPCfUVQ9kna2/2OqHz/7F04IOl1/66LmQjB/lOeAzwq7LrbTzDbz5cJzlPNJ5qteNtHR56XaJSTNWw==' crossorigin='anonymous'></script>
     <!-- Vue -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.47/vue.global.js' integrity='sha512-2zwx0mkoR2cxZY0humPK79YhJYgoX5lT+WNqkgTcV7qhVm3+msjlmOgoXnN1cW2r9qqbZez3XhnLZsyW3k8Wtg==' crossorigin='anonymous'></script>
     <!-- Css -->
@@ -48,8 +50,8 @@
             
             <ul class="tasks-list">
 
-                <li>
-                    <span>TASK</span>
+                <li v-for="(task, index) in taskList" :key="index"> 
+                    <span>{{task.task}}</span>
                     <i
                         class="fa-solid fa-trash"
                         @mouseover="shake = true"

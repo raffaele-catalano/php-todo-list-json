@@ -4,16 +4,20 @@ createApp( {
     data() {
         return {
             apiUrl: 'server.php',
+            taskList: [],
             //flag che determina il movimento dell'icona del cestino con valore booleano
             shake: false,
         }
     }, 
     methods: {
-        getApi() {
-            console.warn('prova sa sa');
+        getTaskList() {
+            axios.get(this.apiUrl) .then(result => {
+                this.taskList = result.data;
+                console.log('pippo e paperino', this.taskList);
+            });
         }
     },
     mounted() {
-        this.getApi();
+        this.getTaskList();
     }
 }).mount('#app')
