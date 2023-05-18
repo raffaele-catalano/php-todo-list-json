@@ -30,13 +30,15 @@ createApp( {
                 })
         },
         removeTask(index) {
-            const data = new FormData ();
-            data.append('taskToDelete', index);
-            axios.post(this.apiUrl, data)
-            .then(response => {
-                this.taskList = response.data;
-                    console.error('indice array task da eliminare --->',this.taskList);
-                })
+            if(confirm('Are you sure?')) {
+                const data = new FormData ();
+                data.append('taskToDelete', index);
+                axios.post(this.apiUrl, data)
+                .then(response => {
+                    this.taskList = response.data;
+                        console.error('indice array task da eliminare --->',this.taskList);
+                    })
+            }
         }
     },
     mounted() {
