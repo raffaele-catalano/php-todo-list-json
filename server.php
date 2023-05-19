@@ -28,7 +28,7 @@ if(isset($_POST['indexToToggle'])) {
 }
 
 function writeOn($task_list) {
-    file_put_contents('data.json', json_encode($task_list));
+    file_put_contents('data.json', json_encode($task_list, JSON_PRETTY_PRINT));
 };
 
 header('Content-Type: application/json');
