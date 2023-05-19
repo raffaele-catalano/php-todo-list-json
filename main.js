@@ -39,6 +39,17 @@ createApp( {
                         console.error('indice array task da eliminare --->',this.taskList);
                     })
             }
+        },
+        toggleDone(index) {
+            const data = new FormData ();
+            data.append('indexToToggle', index);
+            // data.append('done', false);
+
+            axios.post(this.apiData, data)
+            .then(response => {
+                    this.taskList = response.data;
+                        console.log('ricezione toggle ------>', this.taskList);
+                })
         }
     },
     mounted() {

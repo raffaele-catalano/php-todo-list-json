@@ -21,6 +21,12 @@ if(isset($_POST['taskToDelete'])) {
     writeOn($task_list);
 }
 
+if(isset($_POST['indexToToggle'])) {
+    $index = $_POST['indexToToggle'];
+    $task_list[$index]['done'] = !$task_list[$index]['done'];
+    writeOn($task_list);
+}
+
 function writeOn($task_list) {
     file_put_contents('data.json', json_encode($task_list));
 };

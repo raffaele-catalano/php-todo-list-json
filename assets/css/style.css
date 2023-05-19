@@ -133,3 +133,8 @@ body {
 .tasks-list li i:hover {
     color: #E5412E;
 }
+
+.text-decoration-line-through {
+    text-decoration: line-through #E5412E;
+    /* color: #E5412E; */
+}

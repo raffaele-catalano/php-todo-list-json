@@ -35,18 +35,23 @@
             <button @click="addNewTask">ADD</button>
         </div>
 
-        <!-- <div class="error-message-container">
-            <h3>ERRORE</h3>
-        </div> -->
-
         <!-- --- -->
 
         <div class="list-container">
             
             <ul class="tasks-list">
 
-                <li v-for="(task, index) in taskList" :key="index"> 
-                    <span>{{task.task}}</span>
+                <li
+                    v-for="(taskItem, index) in taskList"
+                    :key="index">
+                    
+                    <span
+                        @click="toggleDone(index)"
+                        :class="{'text-decoration-line-through':taskItem.done}">
+                    {{taskItem.task}}
+                    </span>
+                    
+
                     <i
                         class="fa-solid fa-trash"
                         @click.stop="removeTask(index)"></i>
